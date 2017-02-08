@@ -1,5 +1,5 @@
-class DateFormatter {
-    formatPrettyDate(from, now = '') {
+var dateFormatter = {
+    format: function (from, now) {
         var date = new Date(from);
         var now_date = now ? new Date(now) : new Date();
         var diff = (now_date.getTime() - date.getTime()) / 1000;
@@ -23,4 +23,4 @@ class DateFormatter {
             day_diff < 7 && day_diff + " days ago" ||
             day_diff < 31 && Math.ceil( day_diff / 7 ) + " weeks ago";
     }
-}
+};

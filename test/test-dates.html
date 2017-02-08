@@ -8,20 +8,18 @@
     <script src="../dist/main.js"></script>
     <script>
         QUnit.test("prettydate.format", function(assert) {
-            const dateFormatter = new DateFormatter();
-
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 23:59:20', '2017/01/28 00:00:00'), 'just now');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 23:58:31', '2017/01/28 00:00:00'), '1 minute ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 23:57:21', '2017/01/28 00:00:00'), '2 minutes ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 23:25:00', '2017/01/28 00:00:00'), '35 minutes ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 23:01:39', '2017/01/28 00:00:00'), '58 minutes ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 22:25:00', '2017/01/28 00:00:00'), '1 hour ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 19:16:00', '2017/01/28 00:00:00'), '4 hours ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 14:25:00', '2017/01/28 00:00:00'), '9 hours ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/27 00:00:00', '2017/01/28 00:00:00'), 'Yesterday');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/25 22:25:00', '2017/01/28 00:00:00'), '2 days ago');
-            assert.equal(dateFormatter.formatPrettyDate('2017/01/11 22:25:00', '2017/01/28 00:00:00'), '3 weeks ago');
-            assert.equal(dateFormatter.formatPrettyDate('2016/12/11 22:25:00', '2017/01/28 00:00:00'), 'A long time ago');
+            assert.equal(dateFormatter.format('2017/01/27 23:59:20', '2017/01/28 00:00:00'), 'just now');
+            assert.equal(dateFormatter.format('2017/01/27 23:58:31', '2017/01/28 00:00:00'), '1 minute ago');
+            assert.equal(dateFormatter.format('2017/01/27 23:57:21', '2017/01/28 00:00:00'), '2 minutes ago');
+            assert.equal(dateFormatter.format('2017/01/27 23:25:00', '2017/01/28 00:00:00'), '35 minutes ago');
+            assert.equal(dateFormatter.format('2017/01/27 23:01:39', '2017/01/28 00:00:00'), '58 minutes ago');
+            assert.equal(dateFormatter.format('2017/01/27 22:25:00', '2017/01/28 00:00:00'), '1 hour ago');
+            assert.equal(dateFormatter.format('2017/01/27 19:16:00', '2017/01/28 00:00:00'), '4 hours ago');
+            assert.equal(dateFormatter.format('2017/01/27 14:25:00', '2017/01/28 00:00:00'), '9 hours ago');
+            assert.equal(dateFormatter.format('2017/01/27 00:00:00', '2017/01/28 00:00:00'), 'Yesterday');
+            assert.equal(dateFormatter.format('2017/01/25 22:25:00', '2017/01/28 00:00:00'), '2 days ago');
+            assert.equal(dateFormatter.format('2017/01/11 22:25:00', '2017/01/28 00:00:00'), '3 weeks ago');
+            assert.equal(dateFormatter.format('2016/12/11 22:25:00', '2017/01/28 00:00:00'), 'A long time ago');
         });
     </script>
 </head>
