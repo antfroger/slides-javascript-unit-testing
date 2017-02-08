@@ -108,6 +108,44 @@
 
                         <a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/test/test-dates.qunit.html" class="button" target="_blank">Full code</a>
                     </script></section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Install</h3>
+
+                        <p>Two packages available in NPM</p>
+
+                        <ul class="no-bullet text-center">
+                            <li><a href="https://www.npmjs.com/package/qunit" class="text-no-transform button" target="_blank">qunit</a></li>
+                            <li><a href="https://www.npmjs.com/package/grunt-contrib-qunit" class="text-no-transform button" target="_blank">grunt-contrib-qunit</a></li>
+                        </ul>
+
+                        ```
+                            $ npm install qunit --save-dev
+                            $ npm install grunt-contrib-qunit --save-dev
+                        ```
+                    </script></section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Configuration</h3>
+
+                        `Gruntfile.js`
+
+                        ```javascript
+                        module.exports = function(grunt) {
+                          grunt.initConfig({
+                            // ...
+
+                            qunit: {
+                              files: ['test/**/*.html']
+                            }
+                          });
+
+                          grunt.loadNpmTasks('grunt-contrib-qunit');
+                          
+                          // ...
+                          
+                          grunt.registerTask('test', ['qunit']);
+                        };
+                        ```
+                    </script></section>
                     <section>
                         <h3>Browser</h3>
 
@@ -147,6 +185,50 @@
                         ```
 
                         <a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/src/convert.js" class="button" target="_blank">Full code</a>
+                    </script></section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Install</h3>
+
+                        <p>Two packages available in NPM</p>
+
+                        <ul class="no-bullet text-center">
+                            <li><a href="https://www.npmjs.com/package/jasmine" class="text-no-transform button" target="_blank">jasmine</a></li>
+                            <li><a href="https://www.npmjs.com/package/grunt-contrib-jasmine" class="text-no-transform button" target="_blank">grunt-contrib-jasmine</a></li>
+                        </ul>
+
+                        ```
+                            $ npm install jasmine --save-dev
+                            $ npm install grunt-contrib-jasmine --save-dev
+                        ```
+                    </script></section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Configuration</h3>
+
+                        `Gruntfile.js`
+
+                        ```javascript
+                        module.exports = function(grunt) {
+                          grunt.initConfig({
+                            // ...
+
+                            jasmine: {
+                              pivotal: {
+                                src: 'src/**/*.js',
+                                options: {
+                                  specs: 'spec/*Spec.js',
+                                  helpers: 'spec/*Helper.js'
+                                }
+                              }
+                            }
+                          });
+
+                          grunt.loadNpmTasks('grunt-contrib-jasmine');
+                          
+                          // ...
+                          
+                          grunt.registerTask('test', ['jasmine']);
+                        };
+                        ```
                     </script></section>
                     <section data-markdown><script type="text/template">
                         <h3>Tests</h3>
