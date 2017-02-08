@@ -1,0 +1,22 @@
+{
+  "name": "javascript-unit-testing",
+  "version": "1.0.0",
+  "author": "Antoine Froger",
+  "license": "ISC",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:antfroger/slides-javascript-unit-testing.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-qunit": "^1.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "qunitjs": "^2.1.1"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
