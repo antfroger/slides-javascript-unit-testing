@@ -24,13 +24,13 @@
     <body>
         <div class="reveal">
             <div class="slides">
-                <a href="https://newcraftgroup.com" class="logo" target="_blank">NEWCRAFT</a>
+                <a href="https://newcraftgroup.com" class="logo button" target="_blank">NEWCRAFT</a>
                 <section class="main">
                     <h1>Javascript Unit Testing</h1>
 
                     <h5>An introduction to Javascript Unit Testing</h5>
 
-                    <small>A <a href="https://www.newcraftgroup.com/" target="_blank">Newcraft</a> tech meetup</small>
+                    <small>A <a href="https://www.newcraftgroup.com/" class="button" target="_blank">Newcraft</a> tech meetup</small>
                 </section>
 
                 <section>
@@ -40,31 +40,143 @@
 
                     <section class="logos">
                         <a href="http://qunitjs.com/" target="_blank"><img src="./images/qunit.png" alt="QUnit" /></a>
+
+                        <p>JavaScript Unit Testing framework</p>
                     </section>
 
                     <section class="logos">
                         <a href="https://jasmine.github.io/" target="_blank"><img src="./images/jasmine.svg" alt="Jasmine" /></a>
+
+                        <p>BDD testing framework</p>
                     </section>
 
                     <section class="logos">
                         <a href="http://mochajs.org/" target="_blank"><img src="./images/mocha.svg" alt="Mocha" /></a>
+
+                        <p>BDD testing framework</p>
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2 class="has-shape type-rectangle color-yellow">Demo</h2>
+                        <h2 class="has-shape type-rectangle color-yellow">QUnit</h2>
 
                         <p>Few simple tests in a fresh repository</p>
                     </section>
-                    <section>
-                        <h3>QUnit</h3>
+                    <section data-markdown><script type="text/template">
+                        <h3>Date formatter</h3>
 
-                        <ul class="no-bullet">
-                            <li><a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/test/test-dates.html" target="_blank">Look at the code</a></li>
-                            <li><a href="./test/test-dates.html" target="_blank">Run the tests in a browser</a></li>
-                            <li><a href="https://travis-ci.org/antfroger/slides-javascript-unit-testing" target="_blank">Run the tests with Travis CI</a></li>
-                        </ul>
+                        ```javascript
+                        var dateFormatter = {
+                            format: function (from, now) {
+                                var formattedTextDate;
+
+                                // ...
+
+                                if (day_diff >= 31) {
+                                    formattedTextDate = "A long time ago";
+                                } else if (day_diff === 0 && diff < 60) {
+                                    formattedTextDate = "just now";
+                                }
+
+                                // ...
+
+                                return formattedTextDate;
+                            }
+                        };
+                        ```
+
+                        <a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/src/dates.js" class="button" target="_blank">Full code</a>
+                    </script></section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Tests</h3>
+
+                        ```javascript
+                        QUnit.test("Format dates", function(assert) {
+                            assert.equal(
+                                dateFormatter.format('2017/01/27 23:59:20', '2017/01/28 00:00:00'),
+                                'just now'
+                            );
+                        });
+                        ```
+
+                        <a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/test/test-dates.qunit.html" class="button" target="_blank">Full code</a>
+                    </script></section>
+                    <section>
+                        <h3>Browser</h3>
+
+                        <p><img src="./images/qunit-browser.png" /></p>
+
+                        <a href="./test/test-dates.qunit.html" class="button" target="_blank">Run the tests in a browser</a>
+                    </section>
+                    <section>
+                        <h3>Travis CI</h3>
+
+                        <p>
+                            <img src="./images/qunit-travis-ci.png" /><br />
+                            <img src="https://travis-ci.org/antfroger/slides-javascript-unit-testing.svg?branch=master">
+                        </p>
+
+                        <a href="https://travis-ci.org/antfroger/slides-javascript-unit-testing" class="button" target="_blank">Run the tests with Travis CI</a>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2 class="has-shape type-rectangle color-yellow">Jasmine</h2>
+
+                        <p>Few simple tests in a fresh repository</p>
+                    </section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Unit converter</h3>
+
+                        ```javascript
+                        function Convert(number, fromUnit) {
+                            // ...
+
+                            return {
+                                to : function (toUnit) {
+                                    if (betweenUnit) {
+                                        // return ...
+                                    }
+
+                                    throw new Error("unrecognized from-unit");
+                                }
+                            };
+                        }
+                        ```
+
+                        <a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/src/convert.js" class="button" target="_blank">Full code</a>
+                    </script></section>
+                    <section data-markdown><script type="text/template">
+                        <h3>Tests</h3>
+
+                        ```javascript
+                        describe( "Convert library", function () {
+                            describe( "distance converter", function () {
+                                it("converts inches to centimeters", function () {
+                                    expect(Convert(12, "inches").to("cm")).toEqual(30.48);
+                                });
+                            });
+
+                            describe( "volume converter", function () {
+                                it("converts liters to gallons", function () {
+                                    expect(Convert(3, "liters").to("gallons")).toEqual(0.79);
+                                });
+                            });
+                        });
+                        ```
+
+                        <a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/test/SpecRunner.jasmine.html" class="button" target="_blank">Full code</a>
+                    </script></section>
+                    <section>
+                        <h3>Browser</h3>
+
+                        <p>
+                            <img src="./images/jasmine-browser-success.png" />
+                            <img src="./images/jasmine-browser-fail.png" />
+                        </p>
+
+                        <a href="./test/SpecRunner.jasmine.html" class="button" target="_blank">Run the tests in a browser</a>
                     </section>
                 </section>
 
@@ -73,8 +185,8 @@
                     <h2>Questions?</h2>
 
                     <ul class="no-bullet">
-                        <li><i class="fa fa-github"></i> <a href="https://github.com/antfroger" class="text-no-transform">github.com/antfroger</a></li>
-                        <li><i class="fa fa-twitter"></i> <a href="https://twitter.com/__tooni__" class="text-no-transform">@__tooni__</a></li>
+                        <li><i class="fa fa-github"></i> <a href="https://github.com/antfroger" class="text-no-transform button">github.com/antfroger</a></li>
+                        <li><i class="fa fa-twitter"></i> <a href="https://twitter.com/__tooni__" class="text-no-transform button">@__tooni__</a></li>
                     </ul>
                 </section>
             </div>

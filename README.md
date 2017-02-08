@@ -6,3 +6,7 @@
     $ cd slides-javascript-unit-testing
     $ open index.html
 
+Sources:
+
+* https://code.tutsplus.com/tutorials/testing-your-javascript-with-jasmine--net-21229
+* https://www.smashingmagazine.com/2012/06/introduction-to-javascript-unit-testing/

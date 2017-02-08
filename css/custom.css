@@ -33,7 +33,7 @@
     vertical-align: initial;
 }
 
-.reveal a {
+.reveal a.button {
     color:#000;
     padding:4px;
     font-family: "Kelson", Helvetica, sans-serif;
@@ -41,7 +41,7 @@
     background-color: #ff0;
     line-height: 1.5em;
 }
-.reveal a:hover {
+.reveal a.button:hover {
     transition: all .5s ease;
     color:#fff;
     background-color: #000;
@@ -59,7 +59,7 @@
     background-color: #ff0;
 }
 
-.reveal .text-no-transform {
+.reveal .slides .text-no-transform {
     text-transform: none;
 }
 
