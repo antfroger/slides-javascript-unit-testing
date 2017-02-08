@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Javascript Unit Testing | Antoine Froger</title>
+
+        <link rel="stylesheet" href="./reveal.js/css/reveal.css">
+        <link rel="stylesheet" href="./reveal.js/css/theme/white.css">
+        <link rel="stylesheet" href="./reveal.js/lib/css/zenburn.css">
+        <link rel="stylesheet" href="./css/custom.css">
+        <link rel="icon" type="image/png" href="./images/favicon.png">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <a href="https://newcraftgroup.com" class="logo" target="_blank">NEWCRAFT</a>
+                <section class="main">
+                    <h1>Javascript Unit Testing</h1>
+
+                    <h5>An introduction to Javascript Unit Testing</h5>
+
+                    <small>A <a href="https://www.newcraftgroup.com/" target="_blank">Newcraft</a> tech meetup</small>
+                </section>
+
+                <section>
+                    <section>
+                        <h2 class="has-shape type-rectangle color-yellow">Some frameworks</h2>
+                    </section>
+
+                    <section class="logos">
+                        <a href="http://qunitjs.com/" target="_blank"><img src="./images/qunit.png" alt="QUnit" /></a>
+                    </section>
+
+                    <section class="logos">
+                        <a href="https://jasmine.github.io/" target="_blank"><img src="./images/jasmine.svg" alt="Jasmine" /></a>
+                    </section>
+
+                    <section class="logos">
+                        <a href="http://mochajs.org/" target="_blank"><img src="./images/mocha.svg" alt="Mocha" /></a>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2 class="has-shape type-rectangle color-yellow">Demo</h2>
+
+                        <p>Few simple tests in a fresh repository</p>
+                    </section>
+                    <section>
+                        <h3>QUnit</h3>
+
+                        <ul class="no-bullet">
+                            <li><a href="./test/test-dates.html" target="_blank">Run the test on a browser</a></li>
+                            <li><a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/test/test-dates.html">Look at the code</a></li>
+                            <li><a href="">Run the tests with Travis CI</a></li>
+                            <li><a href="https://github.com/antfroger/slides-javascript-unit-testing/blob/master/">Look at the code</a></li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Thanks</h1>
+                    <h2>Questions?</h2>
+
+                    <ul class="no-bullet">
+                        <li><i class="fa fa-github"></i> <a href="https://github.com/antfroger" class="text-no-transform">github.com/antfroger</a></li>
+                        <li><i class="fa fa-twitter"></i> <a href="https://twitter.com/__tooni__" class="text-no-transform">@__tooni__</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <script src="./reveal.js/lib/js/head.min.js"></script>
+        <script src="./reveal.js/js/reveal.js"></script>
+        <script src="https://use.fontawesome.com/58f1022f98.js"></script>
+
+        <script>
+            Reveal.initialize({
+                history: true,
+                transition: 'slide',
+                slideNumber: !window.location.search.match(/print-pdf/gi),
+
+                dependencies: [
+                    { src: './reveal.js/plugin/markdown/marked.js' },
+                    { src: './reveal.js/plugin/markdown/markdown.js' },
+                    { src: './reveal.js/plugin/notes/notes.js', async: true },
+                    { src: './reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+                ]
+            });
+        </script>
+    </body>
+</html>
