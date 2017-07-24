@@ -6,7 +6,8 @@
     $ cd slides-javascript-unit-testing
     $ open index.html
     
-💾 [Download the slides](https://github.com/antfroger/slides-javascript-unit-testing/raw/master/Javascript-unit-testing.pdf)
+[Display the slides](https://antfroger.github.io/slides-javascript-unit-testing/)  
+[Download the slides](https://github.com/antfroger/slides-javascript-unit-testing/raw/master/Javascript-unit-testing.pdf) 💾
 
 Sources:
 
